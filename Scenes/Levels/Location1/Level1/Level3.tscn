@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Levels/Location1/Level1/Level3.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemies/Enemy_1/Enemy_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Tiles/GrassTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Location1/SpikePit/SpikePit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Location1/Door/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Background/Background1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Levels/Respawn/Respawn.tscn" type="PackedScene" id=8]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Background1" parent="Background" instance=ExtResource( 7 )]
+margin_left = 18.0
+margin_top = 25.0
+margin_right = 338.0
+margin_bottom = 209.0
+
+[node name="BGObjects" type="Node2D" parent="."]
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door1-3" parent="Doors" instance=ExtResource( 6 )]
+position = Vector2( 70, 193 )
+next_scene = "res://Scenes/Levels/Location1/Level1/Level1.tscn"
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="SpikePit" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 255, 209 )
+
+[node name="SpikePit2" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 270, 209 )
+
+[node name="SpikePit3" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 285, 209 )
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 0, 1 )
+
+[node name="Enemy_1" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 213, 116 )
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource( 3 )]
+position = Vector2( 36, 165 )
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="GrassTileMap" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 7, 29 )
+tile_data = PoolIntArray( -131069, 0, 0, -131068, 0, 131076, -131067, 0, 131076, -131066, 0, 1, -131065, 0, 131076, -131064, 0, 1, -131063, 0, 1, -131062, 0, 1, -131061, 0, 131076, -131060, 0, 131076, -131059, 0, 131076, -131058, 0, 131076, -131057, 0, 1, -131056, 0, 1, -131055, 0, 131076, -131054, 0, 1, -131053, 0, 1, -131052, 0, 131076, -131051, 0, 2, -1, 0, 0, -65536, 0, 1, -65535, 0, 131076, -65534, 0, 131076, -65533, 0, 131077, -65532, 0, 65537, -65531, 0, 3, -65530, 0, 4, -65529, 0, 131073, -65528, 0, 4, -65527, 0, 4, -65526, 0, 5, -65525, 0, 65537, -65524, 0, 3, -65523, 0, 4, -65522, 0, 4, -65521, 0, 4, -65520, 0, 131073, -65519, 0, 131073, -65518, 0, 4, -65517, 0, 5, -65516, 0, 65537, -65515, 0, 65538, 65535, 0, 65541, 0, 0, 3, 1, 0, 4, 2, 0, 131073, 3, 0, 131073, 4, 0, 131073, 5, 0, 131074, 10, 0, 131072, 11, 0, 4, 12, 0, 131074, 19, 0, 131072, 20, 0, 5, 21, 0, 65539, 131071, 0, 65536, 65536, 0, 65538, 65556, 0, 65536, 65557, 0, 65539, 196607, 0, 65536, 131072, 0, 65538, 131092, 0, 65541, 131093, 0, 131075, 131094, 0, 2, 262143, 0, 65536, 196608, 0, 65539, 196628, 0, 131072, 196629, 0, 5, 196630, 0, 65538, 327679, 0, 65541, 262144, 0, 65539, 262165, 0, 65541, 262166, 0, 65539, 393215, 0, 65541, 327680, 0, 65539, 327701, 0, 65536, 327702, 0, 65538, 458751, 0, 65536, 393216, 0, 65539, 393223, 0, 0, 393224, 0, 1, 393225, 0, 131076, 393226, 0, 1, 393227, 0, 131076, 393228, 0, 1, 393229, 0, 1, 393230, 0, 131076, 393231, 0, 131076, 393232, 0, 131076, 393233, 0, 131076, 393234, 0, 1, 393235, 0, 131076, 393236, 0, 1, 393237, 0, 131077, 393238, 0, 65539, 524287, 0, 65536, 458752, 0, 65539, 458759, 0, 131072, 458760, 0, 131073, 458761, 0, 4, 458762, 0, 131073, 458763, 0, 131073, 458764, 0, 131073, 458765, 0, 4, 458766, 0, 131073, 458767, 0, 131073, 458768, 0, 4, 458769, 0, 4, 458770, 0, 4, 458771, 0, 5, 458772, 0, 65537, 458773, 0, 3, 458774, 0, 131074, 589823, 0, 65536, 524288, 0, 65539, 524307, 0, 131072, 524308, 0, 5, 524309, 0, 65538, 655359, 0, 65541, 589824, 0, 131075, 589825, 0, 1, 589826, 0, 2, 589844, 0, 65536, 589845, 0, 65539, 720895, 0, 65536, 655360, 0, 65537, 655361, 0, 65537, 655362, 0, 65538, 655380, 0, 65536, 655381, 0, 65538, 786431, 0, 65536, 720896, 0, 65537, 720897, 0, 65537, 720898, 0, 131075, 720899, 0, 1, 720900, 0, 1, 720901, 0, 1, 720902, 0, 131076, 720903, 0, 131076, 720904, 0, 131076, 720905, 0, 131076, 720906, 0, 1, 720907, 0, 131076, 720908, 0, 131076, 720909, 0, 131076, 720910, 0, 2, 720914, 0, 0, 720915, 0, 131076, 720916, 0, 131077, 720917, 0, 65538, 851967, 0, 131072, 786432, 0, 131073, 786433, 0, 4, 786434, 0, 131073, 786435, 0, 5, 786436, 0, 65537, 786437, 0, 65537, 786438, 0, 65537, 786439, 0, 65537, 786440, 0, 65537, 786441, 0, 3, 786442, 0, 131073, 786443, 0, 131073, 786444, 0, 4, 786445, 0, 5, 786446, 0, 131075, 786447, 0, 1, 786448, 0, 1, 786449, 0, 1, 786450, 0, 131077, 786451, 0, 65537, 786452, 0, 3, 786453, 0, 131074, 851971, 0, 131072, 851972, 0, 131073, 851973, 0, 4, 851974, 0, 131073, 851975, 0, 131073, 851976, 0, 4, 851977, 0, 131074, 851981, 0, 131072, 851982, 0, 4, 851983, 0, 4, 851984, 0, 131073, 851985, 0, 131073, 851986, 0, 131073, 851987, 0, 131073, 851988, 0, 131074 )
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Respawn" parent="." instance=ExtResource( 8 )]
+position = Vector2( 31, 165 )
